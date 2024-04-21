@@ -1,13 +1,13 @@
-package com.hat.hereandthere.user;
+package com.hat.hereandthere.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserApplication {
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserApplication.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 }
