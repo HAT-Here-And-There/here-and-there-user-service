@@ -25,12 +25,13 @@ jobs:
       - name: push base image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_ALIAS: i5i6z8x2
           ECR_REPOSITORY: dev-hat629-ecr-user
         run: |
           docker build -t dev-hat629-ecr-user .
-          docker tag dev-hat629-ecr-user ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:latest
-          docker tag dev-hat629-ecr-user ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
-          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }} --all-tags
+          docker tag dev-hat629-ecr-user ${{ env.ECR_REGISTRY }}/${{ env.ECR_ALIAS }}/${{ env.ECR_REPOSITORY }}:latest
+          docker tag dev-hat629-ecr-user ${{ env.ECR_REGISTRY }}/${{ env.ECR_ALIAS }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.ECR_ALIAS }}/${{ env.ECR_REPOSITORY }} --all-tags
 
       - name: Check out k8s repo
         uses: actions/checkout@master
