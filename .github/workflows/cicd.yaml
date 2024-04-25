@@ -50,6 +50,6 @@ jobs:
           git config --global user.email "deploy@hat.com"
           git config --global user.name "DeployBot"
           
-          git add values.yaml
+          git add application-helm/user-service/values.yaml
           git commit --message "Deploy: update image tag to $IMAGE_TAG"
           git push --set-upstream origin master
