@@ -62,6 +62,7 @@ jobs:
           git config --global user.name "DeployBot"
           
           git add application-helm/user-service/values.yaml
+          git add application-helm/user-service/values-aws.yaml
           git commit --message "Deploy: update image tag to $IMAGE_TAG"
           git push --set-upstream origin main
 
